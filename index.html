@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slack은 생산성 플랫폼입니다 | Slack</title>
+    <link rel="icon" href="img/favicon-32-ua.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+      /* 초기화 */
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+      }
+      /* ****************   ****************** */
+      /* 보더 가이드 */
+      .w1230,
+      .w1530,
+      #gnb ul {
+        box-sizing: border-box;
+      }
+      img {
+        box-sizing: border-box;
+      }
+      #gnb ul li,
+      #header_logo,
+      .card,
+      #gnb #sign a {
+        box-sizing: border-box;
+      }
+
+      /* ******************* */
+      /* quick */
+      .guide {
+        box-sizing: border-box;
+      }
+      .fontWhite * {
+        color: white;
+      }
+      .fontBlue {
+        color: steelblue;
+      }
+      .fontBold {
+        font-weight: bold;
+      }
+      .fll {
+        float: left;
+      }
+      .flr {
+        float: right;
+      }
+      .clear {
+        clear: both;
+      }
+
+      /* ******************* */
+      /* stickyGnbStyle */
+      #stickyGnb {
+        display: none;
+      }
+
+      /* ******************* */
+      /* hederstyle > #gnb + #hero*/
+      #header {
+        width: 100%;
+        background: #541554;
+        height: 575px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #gnb {
+        height: 80px;
+      }
+      #gnb #header_logo {
+        width: 100px;
+        height: 25px;
+        position: relative;
+        top: 27.5px;
+      }
+      /*---------------*/
+      #gnb ul {
+        margin-left: 25px;
+        width: 350px;
+        height: 80px;
+        display: inline-block;
+        font-size: 0.9em;
+      }
+      #gnb ul li {
+        float: left;
+        width: 17%;
+        height: 100%;
+        text-align: center;
+        line-height: 80px;
+      }
+      #gnb ul li:nth-child(3) {
+        width: 32%;
+      }
+      /*---------------*/
+      #gnb #sign {
+        float: right;
+        margin: 16px auto;
+      }
+      #gnb #sign a {
+        font-size: 0.85em;
+        display: inline-block;
+        border: white 1px solid;
+        border-radius: 5px;
+        margin-right: 23px;
+        padding: 12px;
+      }
+      #gnb #sign a:nth-child(1) {
+        border: none;
+      }
+      #gnb #sign a:nth-child(3) {
+        background-color: white;
+        color: #541554;
+      }
+      /*---------------*/
+      #hero {
+        height: 495px;
+        position: relative;
+        top: 0;
+      }
+      #hero #hero_board {
+        width: 50%;
+        margin: 80px auto 80px 0px;
+      }
+      #hero #hero_board h1 {
+        font-size: 42px;
+      }
+      #hero #hero_board span {
+        color: #ecb22e;
+      }
+      #hero #hero_board p:nth-child(2) {
+        width: 90%;
+      }
+      .hero_btn > a svg {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+      .hero_btn > a > div {
+        margin: 3px;
+        width: 50px;
+        height: 50px;
+        background: white;
+        display: inline-block;
+      }
+      #hero #hero_board .hero_btn {
+        float: left;
+        width: 188px;
+        height: 57px;
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: white;
+        margin: 30px 12px 15px 0px;
+      }
+      #hero #hero_board .hero_btn a {
+        color: #541554;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #hero #hero_board .hero_btn:nth-child(3) {
+        text-align: center;
+        line-height: 57px;
+      }
+      #hero #hero_board .hero_btn:nth-child(4) {
+        border-color: #4285f4;
+      }
+      #hero #hero_board .hero_btn:nth-child(4) a {
+        color: white;
+        background-color: #4285f4;
+      }
+      #header video {
+        width: 700px;
+        height: 398.5px;
+        position: absolute;
+        bottom: 80px;
+        left: 53%;
+      }
+
+      /* ******************* */
+      /* mainstyle > 
+        .section > #logos + .article + .clear + .article
+        .section */
+      #main div.section,
+      #main div.section .w1230 {
+        overflow: hidden;
+      }
+      #main .section {
+        width: 100%;
+        background: #f4ede4;
+      }
+      .section #logos {
+        text-align: center;
+        margin: 50px auto;
+      }
+      .section #logos img {
+        margin-right: 50px;
+      }
+      .section #logos > p {
+        margin-bottom: 20px;
+      }
+      .section .article {
+        margin-bottom: 50px;
+      }
+      .article video {
+        width: 600px;
+        height: 346px;
+      }
+      .article .articleBoard {
+        width: 500px;
+        position: relative;
+        top: 40px;
+        left: -30px;
+      }
+      .article:nth-child(4) .articleBoard {
+        left: 30px;
+      }
+      .article .articleBoard > h2 {
+        font-size: 45px;
+        font-weight: bold;
+      }
+      .article .articleBoard > p {
+        margin: 20px auto;
+      }
+      .article .articleBoard > a {
+        display: inline-block;
+        font-size: 1.2em;
+        color: #4285f4;
+        font-weight: bold;
+      }
+      .article .articleBoard > a::after {
+        content: "→";
+      }
+      /* -------------섹션2------------- */
+      #main div.section:nth-child(2) {
+        width: 100%;
+        background: #ffffff;
+        position: relative;
+      }
+      #main div.section:nth-child(2) > div > h3 {
+        margin-top: 100px;
+        font-size: 50px;
+      }
+      #main div.section:nth-child(2) > div > p {
+        margin-top: 15px;
+      }
+      #main div.section:nth-child(2) > div > a {
+        display: inline-block;
+        margin-top: 30px;
+        border: 1px #541554 solid;
+        border-radius: 5px;
+        padding: 20px 40px 20px 40px;
+        background-color: #541554;
+        color: white;
+      }
+      #main > div.section:nth-child(2) div.w1230 {
+        text-align: center;
+      }
+      #main div.section .w1530 {
+        text-align: left;
+        position: relative;
+        top: 0;
+        height: 525px;
+      }
+      #main div.section .w1530 video {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 777px;
+        width: 55%;
+      }
+      #main div.section .w1530 #interviewBoard {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 55%;
+      }
+      .section .percntbox {
+        margin: 100px auto;
+        overflow: hidden;
+      }
+      .section .percntbox > div {
+        width: 180px;
+        height: 200px;
+        float: left;
+        margin-left: 15%;
+      }
+      span.percent {
+        font-size: 90px;
+        color: #541554;
+        font-weight: 600;
+      }
+
+      #interviewBoard > a {
+        display: block;
+        color: #4285f4;
+      }
+      #interviewBoard > a::after {
+        content: "→";
+      }
+      #section2p {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8em;
+      }
+      /* --------------섹션3---------------- */
+      #main div.section:nth-child(3) {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+      #main div.section:nth-child(3) > div {
+        position: relative;
+      }
+      #cardTitle {
+        font-size: 30px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+      }
+      div.cardLink {
+        position: absolute;
+        color: #4285f4;
+        bottom: 10px;
+      }
+      div.cardLink::after {
+        content: "→";
+      }
+      .card {
+        color: black;
+        float: left;
+        width: 23%;
+        height: 430px;
+        margin-left: 2.667%;
+        overflow: hidden;
+        padding: 5px;
+        background-color: white;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+      }
+      .card div:nth-child(2) {
+        font-size: 0.7em;
+        margin: 20px auto 20px 0;
+      }
+      div a.card:nth-child(2) {
+        margin-left: 0px;
+      }
+      a.card > h3 {
+        font-size: 25px;
+      }
+      .box {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 99.99%;
+        max-width: 260px;
+        height: 200px;
+        box-sizing: border-box;
+        background-color: lightgray;
+      }
+
+      /* ******************* */
+      /* footerstyle > #experience + #fnb + #copyrightContainer  */
+
+      #experience {
+        width: 100%;
+        background: #541554;
+        clip-path: ellipse(105% 100% at center top);
+        height: 370px;
+        text-align: center;
+      }
+
+      #footerContentBox {
+        position: relative;
+        top: 130px;
+      }
+      #footerContentBox > p {
+        font-weight: bold;
+        font-size: 25px;
+        color: white;
+        margin-bottom: 50px;
+      }
+      #footerContentBox > a {
+        border: 1px solid white;
+        border-radius: 5px;
+        font-size: 0.9em;
+        padding: 20px 35px;
+      }
+      #footerContentBox > a:nth-child(3) {
+        color: white;
+        margin-left: 5px;
+      }
+      #footerContentBox > a:nth-child(2) {
+        color: #541554;
+        background-color: white;
+      }
+      #fnb {
+        margin-top: 50px;
+        overflow: hidden;
+      }
+      #fnb > a {
+        display: block;
+        float: left;
+        width: 54px;
+        height: 54px;
+      }
+      #fnb #fnbNav {
+        float: right;
+        width: 1050px;
+      }
+      #fnb ul {
+        float: left;
+        width: 20%;
+      }
+      #fnb ul li {
+        font-size: 0.8em;
+        margin-bottom: 20px;
+      }
+      #fnb ul li a {
+        color: black;
+      }
+      #fnb ul .fnbMain {
+        font-weight: bold;
+      }
+
+      #copyrightfnb > ul > li {
+        float: left;
+        margin-right: 20px;
+      }
+      #copyrightfnb > ul > li > a {
+        font-weight: bolder;
+        color: black;
+      }
+      #copyrightfnb .class {
+        float: right;
+      }
+
+      .sns {
+        float: right;
+      }
+      .sns > ul {
+        display: inline-block;
+        position: relative;
+        top: 10px;
+      }
+      .sns > ul > li {
+        float: left;
+        margin-left: 20px;
+      }
+      #fnbDownload {
+        color: #4285f4;
+      }
+
+      #footer hr {
+        margin: 30px auto;
+      }
+      #copyrightContainer p {
+        margin-bottom: 30px;
+        font-size: 0.5em;
+        color: #4f4f4f;
+      }
+      /* 반응형디자인 */
+      /* 1)데스크탑 */
+      @media screen and (min-width: 1300px) {
+        .w1230 {
+          width: 1230px;
+          margin: 0 auto;
+        }
+        .w1530 {
+          width: 1530px;
+          margin: 0 auto;
+        }
+      }
+      /* 2)랩탑,태블릿 */
+      @media screen and (max-width: 1299px) and (min-width: 768px) {
+        .article {
+          overflow: hidden;
+        }
+      }
+
+      /* 4)모바일 */
+      @media screen and (max-width: 767px) {
+        /* 준비중 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- wrapper -->
+    <!-- header + main + footer -->
+
+    <!-- #header -->
+    <!-- stickyGnb + gnb + hero + video -->
+    <!-- #main -->
+    <!-- section#sec1 + section#sec2 + section#sec3 -->
+    <!-- #footer -->
+    <!-- experience + fnb + hr + copyrightContainer -->
+
+    <!-- .section#sec1 -->
+    <!-- #logos + #art1 +clear+ #art2 +clear+ #art3 -->
+    <!-- .section#sec2 -->
+
+    <!-- .section#sec3 -->
+    
+    <div id="wrapper">
+      <!-- 구역1) 보라색 헤더영역 -->
+      <div id="header" class="fontWhite fontBold">
+        <!-- 스크롤을 내릴때 나타나는 메뉴 -->
+        <div id="stickyGnb" class="w1230">
+          <a href="" id="header_logo" class="fll">
+            <!-- svg는 홈페이지에서 가져온 코스 -->
+            <svg
+              height="25"
+              width="100"
+              class="c-slacklogo--white"
+              viewBox="0 0 240 60"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="geometricPrecision"
+            >
+              <title>Slack</title>
+              <g fill="none">
+                <path
+                  d="m75.663 47.477 2.929-6.846c3.207 2.375 7.39 3.632 11.574 3.632 3.068 0 5.02-1.187 5.02-3.003-.07-5.03-18.477-1.118-18.617-13.764-.07-6.427 5.648-11.387 13.737-11.387 4.81 0 9.622 1.188 13.038 3.913l-2.737 6.992c-3.143-2.021-7.025-3.43-10.72-3.43-2.51 0-4.184 1.187-4.184 2.725.07 4.96 18.618 2.235 18.827 14.322 0 6.567-5.579 11.178-13.528 11.178-5.856 0-11.225-1.397-15.34-4.332m116.629-9.325a8.498 8.498 0 0 1 -7.405 4.33c-4.698 0-8.506-3.816-8.506-8.523s3.808-8.523 8.506-8.523a8.498 8.498 0 0 1 7.405 4.33l8.143-4.52c-3.05-5.451-8.868-9.137-15.548-9.137-9.839 0-17.815 7.991-17.815 17.85 0 9.858 7.976 17.85 17.815 17.85 6.68 0 12.498-3.686 15.548-9.137zm-82.477 12.958h10.18v-49.86h-10.179zm95.761-49.86v49.86h10.18v-14.938l12.063 14.938h13.012l-15.34-17.746 14.224-16.559h-12.454l-11.505 13.767v-29.322zm-54.218 15.557v4.053c-1.673-2.795-5.787-4.751-10.11-4.751-8.925 0-15.967 7.895-15.967 17.815s7.042 17.885 15.967 17.885c4.323 0 8.437-1.956 10.11-4.751v4.052h10.18v-34.303zm0 21.414c-1.464 2.445-4.532 4.26-7.948 4.26-4.699 0-8.507-3.815-8.507-8.522s3.808-8.523 8.507-8.523c3.416 0 6.484 1.886 7.948 4.4z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="m21.902.148c-3.299 0-5.973 2.68-5.973 5.985a5.979 5.979 0 0 0 5.973 5.985h5.974v-5.985a5.98 5.98 0 0 0 -5.974-5.985m0 15.96h-15.929c-3.299 0-5.973 2.68-5.973 5.986 0 3.305 2.674 5.985 5.973 5.985h15.93c3.298 0 5.973-2.68 5.973-5.985 0-3.306-2.675-5.986-5.974-5.986"
+                  fill="#097eff"
+                ></path>
+                <path
+                  d="m59.734 22.094c0-3.306-2.675-5.986-5.974-5.986s-5.973 2.68-5.973 5.986v5.985h5.973a5.98 5.98 0 0 0 5.974-5.985m-15.929 0v-15.961a5.98 5.98 0 0 0 -5.974-5.985c-3.299 0-5.973 2.68-5.973 5.985v15.96c0 3.307 2.674 5.987 5.973 5.987a5.98 5.98 0 0 0 5.974-5.985"
+                  fill="#097eff"
+                ></path>
+                <path
+                  d="m37.831 60a5.98 5.98 0 0 0 5.974-5.985 5.98 5.98 0 0 0 -5.974-5.985h-5.973v5.985c0 3.305 2.674 5.985 5.973 5.985m0-15.96h15.93c3.298 0 5.973-2.68 5.973-5.986a5.98 5.98 0 0 0 -5.974-5.985h-15.929c-3.299 0-5.973 2.68-5.973 5.985a5.979 5.979 0 0 0 5.973 5.985"
+                  fill="#ecb12f"
+                ></path>
+                <path
+                  d="m0 38.054a5.979 5.979 0 0 0 5.973 5.985 5.98 5.98 0 0 0 5.974-5.985v-5.985h-5.974c-3.299 0-5.973 2.68-5.973 5.985m15.929 0v15.96c0 3.306 2.674 5.986 5.973 5.986a5.98 5.98 0 0 0 5.974-5.985v-15.961a5.979 5.979 0 0 0 -5.974-5.985c-3.299 0-5.973 2.68-5.973 5.985"
+                  fill="#ecb12f"
+                ></path>
+              </g>
+            </svg>
+          </a>
+          <ul>
+            <li><a href="#">제품</a></li>
+            <li><a href="#">솔루션</a></li>
+            <li><a href="#">엔터프라이즈</a></li>
+            <li><a href="#">리소스</a></li>
+            <li><a href="#">요금</a></li>
+          </ul>
+          <div id="sign">
+            <a href="#">로그인</a>
+            <a href="#">영업 팀과 대화하기</a>
+            <a href="#">무료 체험</a>
+          </div>
+        </div>
+        <!-- 최상단 메뉴바 -->
+        <div id="gnb" class="w1230">
+          <a href="" id="header_logo" class="fll">
+            <!-- svg는 홈페이지에서 가져온 코스 -->
+            <svg
+              height="25"
+              width="100"
+              class="c-slacklogo--white"
+              viewBox="0 0 240 60"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="geometricPrecision"
+            >
+              <title>Slack</title>
+              <g fill="none">
+                <path
+                  d="m75.663 47.477 2.929-6.846c3.207 2.375 7.39 3.632 11.574 3.632 3.068 0 5.02-1.187 5.02-3.003-.07-5.03-18.477-1.118-18.617-13.764-.07-6.427 5.648-11.387 13.737-11.387 4.81 0 9.622 1.188 13.038 3.913l-2.737 6.992c-3.143-2.021-7.025-3.43-10.72-3.43-2.51 0-4.184 1.187-4.184 2.725.07 4.96 18.618 2.235 18.827 14.322 0 6.567-5.579 11.178-13.528 11.178-5.856 0-11.225-1.397-15.34-4.332m116.629-9.325a8.498 8.498 0 0 1 -7.405 4.33c-4.698 0-8.506-3.816-8.506-8.523s3.808-8.523 8.506-8.523a8.498 8.498 0 0 1 7.405 4.33l8.143-4.52c-3.05-5.451-8.868-9.137-15.548-9.137-9.839 0-17.815 7.991-17.815 17.85 0 9.858 7.976 17.85 17.815 17.85 6.68 0 12.498-3.686 15.548-9.137zm-82.477 12.958h10.18v-49.86h-10.179zm95.761-49.86v49.86h10.18v-14.938l12.063 14.938h13.012l-15.34-17.746 14.224-16.559h-12.454l-11.505 13.767v-29.322zm-54.218 15.557v4.053c-1.673-2.795-5.787-4.751-10.11-4.751-8.925 0-15.967 7.895-15.967 17.815s7.042 17.885 15.967 17.885c4.323 0 8.437-1.956 10.11-4.751v4.052h10.18v-34.303zm0 21.414c-1.464 2.445-4.532 4.26-7.948 4.26-4.699 0-8.507-3.815-8.507-8.522s3.808-8.523 8.507-8.523c3.416 0 6.484 1.886 7.948 4.4z"
+                  fill="#ffffff"
+                ></path>
+                <path
+                  d="m21.902.148c-3.299 0-5.973 2.68-5.973 5.985a5.979 5.979 0 0 0 5.973 5.985h5.974v-5.985a5.98 5.98 0 0 0 -5.974-5.985m0 15.96h-15.929c-3.299 0-5.973 2.68-5.973 5.986 0 3.305 2.674 5.985 5.973 5.985h15.93c3.298 0 5.973-2.68 5.973-5.985 0-3.306-2.675-5.986-5.974-5.986"
+                  fill="#097eff"
+                ></path>
+                <path
+                  d="m59.734 22.094c0-3.306-2.675-5.986-5.974-5.986s-5.973 2.68-5.973 5.986v5.985h5.973a5.98 5.98 0 0 0 5.974-5.985m-15.929 0v-15.961a5.98 5.98 0 0 0 -5.974-5.985c-3.299 0-5.973 2.68-5.973 5.985v15.96c0 3.307 2.674 5.987 5.973 5.987a5.98 5.98 0 0 0 5.974-5.985"
+                  fill="#097eff"
+                ></path>
+                <path
+                  d="m37.831 60a5.98 5.98 0 0 0 5.974-5.985 5.98 5.98 0 0 0 -5.974-5.985h-5.973v5.985c0 3.305 2.674 5.985 5.973 5.985m0-15.96h15.93c3.298 0 5.973-2.68 5.973-5.986a5.98 5.98 0 0 0 -5.974-5.985h-15.929c-3.299 0-5.973 2.68-5.973 5.985a5.979 5.979 0 0 0 5.973 5.985"
+                  fill="#ecb12f"
+                ></path>
+                <path
+                  d="m0 38.054a5.979 5.979 0 0 0 5.973 5.985 5.98 5.98 0 0 0 5.974-5.985v-5.985h-5.974c-3.299 0-5.973 2.68-5.973 5.985m15.929 0v15.96c0 3.306 2.674 5.986 5.973 5.986a5.98 5.98 0 0 0 5.974-5.985v-15.961a5.979 5.979 0 0 0 -5.974-5.985c-3.299 0-5.973 2.68-5.973 5.985"
+                  fill="#ecb12f"
+                ></path>
+              </g>
+            </svg>
+          </a>
+          <ul>
+            <li><a href="#">제품</a></li>
+            <li><a href="#">솔루션</a></li>
+            <li><a href="#">엔터프라이즈</a></li>
+            <li><a href="#">리소스</a></li>
+            <li><a href="#">요금</a></li>
+          </ul>
+          <div id="sign">
+            <a href="#">로그인</a>
+            <a href="#">영업 팀과 대화하기</a>
+            <a href="#">무료 체험</a>
+          </div>
+        </div>
+        <!-- hero 보드-->
+        <div id="hero" class="w1230">
+          <div id="hero_board">
+            <h1>
+              사람을 최우선으로 합니다.
+              <span>생산성을 위해 제작되었습니다.</span>
+            </h1>
+            <p>
+              적합한 사람을 연결하고, 필요한 모든 것을 찾아내며, 자동화를
+              활용하세요. 생산성 플랫폼인 Slack에서의 업무는 바로 이런 것입니다.
+            </p>
+            <div class="hero_btn">
+              <a href="#">이메일로 가입하기</a>
+            </div>
+            <div class="hero_btn">
+              <a href="#">
+                <div>
+                  <svg
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    class="LgbsSe-Bz112c"
+                  >
+                    <g>
+                      <path
+                        fill="#EA4335"
+                        d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+                      ></path>
+                      <path
+                        fill="#4285F4"
+                        d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+                      ></path>
+                      <path
+                        fill="#FBBC05"
+                        d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+                      ></path>
+                      <path
+                        fill="#34A853"
+                        d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+                      ></path>
+                      <path fill="none" d="M0 0h48v48H0z"></path>
+                    </g>
+                  </svg>
+                </div>
+                GOOGLE로 가입
+              </a>
+            </div>
+            <p class="clear">
+              원하는 기간 동안 Slack을 무료로 사용해 볼 수 있습니다
+            </p>
+          </div>
+        </div>
+        <video src="img/hero-product-ui.ko-KR.mp4" loop muted playsinkine>
+        </video>
+      </div> 
+      <div id="main">
+        <div class="section" id="sec1">
+          <div id="logos" class="w1230">
+            <p>전 세계 기업들이 신뢰하는 SLACK</p>
+            <img src="img/logos/logo-grab.png" alt="grab" />
+            <img src="img/logos/logo-xero.png" alt="xero" />
+            <img src="img/logos/logo-seek.png" alt="seek" />
+            <img src="img/logos/logo-iag.png" alt="iag" />
+            <img src="img/logos/logo-agl.png" alt="agl" />
+            <img src="img/logos/logo-anz.png" alt="anz" />
+            <img src="img/logos/logo-sportsbet.png" alt="sportbet" />
+          </div>
+          <div id="art1" class="w1230">
+            <video
+              src="img/speed.ko-KR.mp4"
+              class="fll"
+              loop
+              muted
+              playsinkine
+            ></video>
+            <div class="flr articleBoard">
+              <h2>도구를 한곳에 모아 더 빠르게 업무를 진행하세요</h2>
+              <p>
+                Slack에 연계된 다른 업무용 앱들을 사용하면 탭을 덜 전환하게 돼
+                더욱 빠른 작업이 가능합니다. 또, 워크플로 빌더와 같은 강력한
+                도구를 통해 일상적인 작업을 자동화할 수도 있습니다.
+              </p>
+              <a href="#">Slack플랫폼에 대해 자세히 알아보기</a>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div id="art2" class="w1230">
+            <video src="img/flexibility.ko-KR.mp4" class="flr"></video>
+            <div class="articleBoard fll">
+              <h2>원하는 업무 방식을 선택하세요</h2>
+              <p>
+                Slack은 사용자가 언제, 어디서, 어떻게 일하든 최적의 환경을
+                제공하는 유연성을 갖추고 있습니다. 쉽게 채팅하고, 오디오나
+                비디오 클립을 전송하고, 또 실시간 논의를 위해 허들에 참여할 수
+                있습니다.
+              </p>
+              <a href=""
+                >유연한 커뮤니케이션에 관해 자세히 알아보기<span></span
+              ></a>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div id="art3" class="w1230">
+            <video class="fll" src="img/connectedness.ko-KR.mp4"></video>
+            <div class="flr articleBoard">
+              <h2>팀을 모두 한곳에 모으세요</h2>
+              <p>
+                Slack의 중심에는 모든 인력과 업무에 필요한 모든 것을 체계화할 수
+                있는 공간인 채널이 있습니다. 채널에서는 부서, 사무실, 다른
+                시간대뿐만 아니라 심지어 다른 회사와의 연계도 더욱 수월해집니다.
+              </p>
+              <a href="#">채널에 관해 자세히 알아보기</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="section" id="sec2">
+          <div class="w1230">
+            <h3>크고 작은 팀들 모두 Slack을 사용합니다</h3>
+            <p>
+              Slack은 세계 최대 규모의 기업들이 안전하게 협업할 수 있도록 지원을
+              확대하고 있습니다.
+            </p>
+            <a href="#">slack rot enterprise 소개</a>
+            <a href="#">영업 팀과 대화하기</a>
+          </div>
+          <div class="w1230 percntbox">
+            <div>
+              <span class="percent">85%</span>
+              <span
+                ><b>Slack</b>이 커뮤니케이션을 개선했다고 답변한 사용자의
+                비율*</span
+              >
+            </div>
+            <div>
+              <span class="percent">85%</span>
+              <span>원격 근무 능력이 향상되었음을 느끼는 직원의 비율*</span>
+            </div>
+            <div>
+              <span class="percent">88%</span>
+              <span>팀과 더욱 연계되어 있음을 느낌*</span>
+            </div>
+          </div>
+          <div class="w1530">
+            <!-- 홈페이지에서 가져온 비디오소스 -->
+            <video
+              class="video_capsule asset_height"
+              autoplay=""
+              loop=""
+              title="Slack의 고객이 나오는 비디오, "
+              muted=""
+              playsinline=""
+            >
+              <source
+                src="https://a.slack-edge.com/1b4e2a3/marketing/img/homepage/true-prospects/customer-showcase/Samsung_08.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <!-- 홈페이지에서 가져온 비디오소스 -->
+            <div id="interviewBoard">
+              <h5>
+                “Slack으로 성과뿐만 아니라 직장 문화도 개선하였습니다. 보안과
+                생산성 측면에서 최고의 솔루션을 제공합니다.”
+              </h5>
+              <span>Hyesoon (Sally) Jeong</span>
+              <span>VP, 프레임워크 R&D 그룹, Samsung MX 사업부, Samsung</span>
+              <a href="#">더 많은 고객 사례 보기</a>
+            </div>
+          </div>
+          <p id="section2p">
+            * 가중치 평균. 미국, 영국, 오스트레일리아 및 캐나다의 주간 Slack
+            사용자가 참여한 2,707개의 설문 조사 응답 기반, 95% CI에서의 오차
+            범위 ±2%(2021년 12월).
+          </p>
+        </div>
+        <div class="section" id="sec3">
+          <div class="w1230">
+            <h3 id="cardTitle">새로운 업무 방식을 더 자세히 알아보세요</h3>
+            <a href="#" class="card">
+              <div class="box">
+                <img src="" alt="슬랙 아이콘" />
+              </div>
+              <div>기능</div>
+              <h3>Slack 사용법을 미리 알아두세요</h3>
+              <div class="cardLink">기능 알아보기</div>
+            </a>
+            <a href="#" class="card">
+              <div class="box">
+                <img src="" alt="말풍선 그림" />
+              </div>
+              <div>고객 사례</div>
+              <h3>Slack을 사용 중인 분들의 이야기를 만나 보세요</h3>
+              <div class="cardLink">스토리 읽기</div>
+            </a>
+            <a href="#" class="card">
+              <div class="box">
+                <img src="" alt="확성기 그림" />
+              </div>
+              <div>솔루션</div>
+              <h3>Slack이 당신의 팀에 어떤 도움을 주는지 알아보세요</h3>
+              <div class="cardLink">솔루션 살펴보기</div>
+            </a>
+            <a href="#" class="card">
+              <div class="box">
+                <img src="" alt="제트기 그림" />
+              </div>
+              <div>방법</div>
+              <h3>Slack 초보자를 위한 가이드를 만나보세요</h3>
+              <div class="cardLink">방법 알아보기</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div id="experience">
+          <div id="footerContentBox" class="">
+            <p>Slack으로 이룰 수 있는 모든 것을 확인해 보세요</p>
+            <a href="" class="footer_btn">무료 체험</a>
+            <a href="" class="footer_btn">영업팀과 대화하기</a>
+          </div>
+        </div>
+        <div id="fnb" class="w1230">
+          <a href="index.html">
+            <svg
+              width="54"
+              height="54"
+              class="c-nav--footer__svgicon c-slackhash"
+              viewBox="0 0 54 54"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g fill="none" fill-rule="evenodd">
+                <path
+                  d="M19.712.133a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386h5.376V5.52A5.381 5.381 0 0 0 19.712.133m0 14.365H5.376A5.381 5.381 0 0 0 0 19.884a5.381 5.381 0 0 0 5.376 5.387h14.336a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386"
+                  fill="#097eff"
+                ></path>
+                <path
+                  d="M53.76 19.884a5.381 5.381 0 0 0-5.376-5.386 5.381 5.381 0 0 0-5.376 5.386v5.387h5.376a5.381 5.381 0 0 0 5.376-5.387m-14.336 0V5.52A5.381 5.381 0 0 0 34.048.133a5.381 5.381 0 0 0-5.376 5.387v14.364a5.381 5.381 0 0 0 5.376 5.387 5.381 5.381 0 0 0 5.376-5.387"
+                  fill="#097eff"
+                ></path>
+                <path
+                  d="M34.048 54a5.381 5.381 0 0 0 5.376-5.387 5.381 5.381 0 0 0-5.376-5.386h-5.376v5.386A5.381 5.381 0 0 0 34.048 54m0-14.365h14.336a5.381 5.381 0 0 0 5.376-5.386 5.381 5.381 0 0 0-5.376-5.387H34.048a5.381 5.381 0 0 0-5.376 5.387 5.381 5.381 0 0 0 5.376 5.386"
+                  fill="#ecb12f"
+                ></path>
+                <path
+                  d="M0 34.249a5.381 5.381 0 0 0 5.376 5.386 5.381 5.381 0 0 0 5.376-5.386v-5.387H5.376A5.381 5.381 0 0 0 0 34.25m14.336-.001v14.364A5.381 5.381 0 0 0 19.712 54a5.381 5.381 0 0 0 5.376-5.387V34.25a5.381 5.381 0 0 0-5.376-5.387 5.381 5.381 0 0 0-5.376 5.387"
+                  fill="#ecb12f"
+                ></path>
+              </g>
+            </svg>
+          </a>
+          <div id="fnbNav">
+            <ul>
+              <li class="fnbMain">SLACK을 사용해야 하는 이유</li>
+              <li><a href="#">Slack vs. 이메일</a></li>
+              <li><a href="#">채널</a></li>
+              <li><a href="#">참여</a></li>
+              <li><a href="#">확장성</a></li>
+              <li><a href="#">데모 보기</a></li>
+            </ul>
+            <ul>
+              <li class="fnbMain">제품</li>
+              <li><a href="#">기능</a></li>
+              <li><a href="#">통합</a></li>
+              <li><a href="#">엔터프라이즈</a></li>
+              <li><a href="#">솔루션</a></li>
+            </ul>
+            <ul>
+              <li class="fnbMain">요금</li>
+              <li><a href="#">플랜</a></li>
+              <li><a href="#">유료 vs. 무료</a></li>
+            </ul>
+            <ul>
+              <li class="fnbMain">리소스</li>
+              <li><a href="#">파트너</a></li>
+              <li><a href="#">개발자</a></li>
+              <li><a href="#">커뮤니티</a></li>
+              <li><a href="#">앱</a></li>
+              <li><a href="#">블로그</a></li>
+              <li><a href="#">고객지원센터</a></li>
+              <li><a href="#">이벤트</a></li>
+            </ul>
+            <ul>
+              <li class="fnbMain">회사</li>
+              <li><a href="#">Slack소개</a></li>
+              <li><a href="#">리더십</a></li>
+              <li><a href="#">새 소식</a></li>
+              <li><a href="#">미디어 키트</a></li>
+              <li><a href="#">채용</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="clear w1230" />
+        <div id="copyrightContainer" class="w1230">
+          <div id="copyrightfnb">
+            <ul>
+              <li><a href="#">상태</a></li>
+              <li><a href="#">개인 정보 보호</a></li>
+              <li><a href="#">약관</a></li>
+              <li><a href="#">쿠키 기본 설정</a></li>
+              <li><a href="#">문의하기</a></li>
+              <li><a href="#">지역 변경</a></li>
+            </ul>
+            <div class="sns guide">
+              <a href="#" id="fnbDownload">
+                <svg
+                  class="c-nav--footer__download-icon"
+                  width="19"
+                  height="16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75938 15.7354C3.07813 15.7354 2.45 15.5572 1.875 15.2009C1.3 14.8445 0.84375 14.3641 0.50625 13.7597C0.16875 13.1552 0 12.4966 0 11.784C0 11.135 0.140625 10.5273 0.421875 9.96101C0.709375 9.39471 1.1 8.93021 1.59375 8.56753C1.4875 8.19212 1.43438 7.8167 1.43438 7.44129C1.43438 6.72864 1.60313 6.07008 1.94063 5.46561C2.27813 4.86113 2.73438 4.38391 3.30938 4.03395C3.88438 3.67763 4.50938 3.49947 5.18438 3.49947C5.28438 3.49947 5.43438 3.50583 5.63438 3.51855C6.19063 2.57684 6.93125 1.83238 7.85625 1.28517C8.7875 0.737961 9.7875 0.464355 10.8563 0.464355C11.9625 0.464355 12.9875 0.75705 13.9313 1.34244C14.875 1.92146 15.6219 2.70728 16.1719 3.6999C16.7281 4.69251 17.0063 5.77421 17.0063 6.94498C17.5563 7.40948 17.9844 7.97896 18.2906 8.65343C18.5969 9.3279 18.75 10.0437 18.75 10.8009C18.75 11.6917 18.5375 12.5157 18.1125 13.2729C17.6938 14.0301 17.125 14.6282 16.4063 15.0672C15.6938 15.5126 14.9125 15.7354 14.0625 15.7354H3.75938ZM14.0625 14.3037C14.6562 14.3037 15.2031 14.1478 15.7031 13.836C16.2094 13.5179 16.6094 13.0916 16.9031 12.5571C17.1969 12.0162 17.3438 11.4308 17.3438 10.8009C17.3438 10.1646 17.1969 9.57923 16.9031 9.04475C16.6094 8.5039 16.2156 8.07758 15.7219 7.7658C15.6656 7.73399 15.625 7.69899 15.6 7.66081C15.5813 7.62263 15.5719 7.57173 15.5719 7.5081C15.5719 7.45084 15.575 7.3713 15.5813 7.26949C15.5938 7.16769 15.6 7.06588 15.6 6.96407C15.6 6.04781 15.3875 5.20155 14.9625 4.42527C14.5375 3.64899 13.9594 3.03497 13.2281 2.58321C12.5031 2.12508 11.7125 1.89601 10.8563 1.89601C10.2063 1.89601 9.59063 2.02963 9.00938 2.29688C8.42813 2.55775 7.91875 2.9268 7.48125 3.40402C7.04375 3.88124 6.70625 4.42527 6.46875 5.03611C6.43125 5.13792 6.375 5.18882 6.3 5.18882C6.25625 5.18882 6.2125 5.17609 6.16875 5.15064C5.8625 5.0043 5.53438 4.93112 5.18438 4.93112C4.75938 4.93112 4.36562 5.04247 4.00313 5.26517C3.64687 5.48788 3.3625 5.7933 3.15 6.18143C2.94375 6.56321 2.84063 6.98316 2.84063 7.44129C2.84063 7.74671 2.8875 8.03941 2.98125 8.31937C3.08125 8.59298 3.21875 8.84113 3.39375 9.06383C3.4375 9.11474 3.45938 9.16246 3.45938 9.207C3.45938 9.26427 3.40625 9.30244 3.3 9.32153C2.94375 9.39152 2.62188 9.54423 2.33438 9.77966C2.04688 10.0151 1.81875 10.3078 1.65 10.6577C1.4875 11.0077 1.40625 11.3831 1.40625 11.784C1.40625 12.2421 1.50938 12.6652 1.71563 13.0534C1.92813 13.4352 2.21563 13.7406 2.57812 13.9696C2.94062 14.1923 3.33438 14.3037 3.75938 14.3037H14.0625ZM9.60938 12.3948C9.42188 12.3948 9.25625 12.3216 9.1125 12.1753L6.3 9.32153C6.1625 9.18155 6.09375 9.01611 6.09375 8.82523C6.09375 8.62798 6.1625 8.45936 6.3 8.31937C6.44375 8.17303 6.6125 8.09985 6.80625 8.09985C6.99375 8.09985 7.15625 8.16984 7.29375 8.30983L8.90625 9.94192V5.95237C8.90625 5.74876 8.97188 5.58014 9.10313 5.44652C9.24063 5.30653 9.40938 5.23654 9.60938 5.23654C9.79063 5.23654 9.95625 5.30653 10.1063 5.44652C10.2438 5.57378 10.3125 5.74239 10.3125 5.95237V9.94192L11.9344 8.30983C12.0719 8.16984 12.2344 8.09985 12.4219 8.09985C12.5969 8.09985 12.7688 8.17939 12.9375 8.33846C13.0625 8.45936 13.125 8.61843 13.125 8.81568C13.125 9.01929 13.0563 9.18791 12.9188 9.32153L10.1063 12.1753C9.95 12.3216 9.78438 12.3948 9.60938 12.3948Z"
+                    fill="#1264A3"
+                  ></path>
+                </svg>
+                <span>Slack 다운로드</span>
+              </a>
+              <ul class="guide">
+                <li>
+                  <a href="#">
+                    <svg
+                      class="c-nav--footer__svgicon"
+                      width="20"
+                      height="20"
+                      version="1"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M31.993 6.077c-1.177.523-2.44.876-3.77 1.033 1.355-.812 2.396-2.098 2.887-3.63-1.27.75-2.673 1.3-4.168 1.592C25.744 3.797 24.038 3 22.15 3c-3.626 0-6.563 2.938-6.563 6.563 0 .514.057 1.016.17 1.496C10.3 10.783 5.464 8.17 2.227 4.2c-.565.97-.89 2.098-.89 3.3 0 2.28 1.16 4.287 2.92 5.465-1.076-.035-2.088-.33-2.973-.82v.08c0 3.182 2.26 5.835 5.264 6.438-.55.15-1.13.23-1.73.23-.423 0-.833-.04-1.233-.117.834 2.606 3.26 4.504 6.13 4.558-2.245 1.76-5.075 2.81-8.15 2.81-.53 0-1.053-.03-1.566-.09C2.905 27.914 6.355 29 10.062 29c12.072 0 18.675-10 18.675-18.675 0-.284-.008-.568-.02-.85 1.283-.925 2.395-2.08 3.276-3.398z"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg
+                      class="c-nav--footer__svgicon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 16 16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.115 0H.885A.883.883 0 0 0 0 .885v14.23c0 .49.395.885.885.885h7.659V9.803h-2.09v-2.4h2.09V5.62c0-2.069 1.27-3.189 3.104-3.189.875 0 1.643.053 1.867.096v2.155h-1.291c-1.003 0-1.184.469-1.184 1.173v1.547h2.379l-.31 2.4H11.04V16h4.075c.49 0 .885-.395.885-.885V.885A.883.883 0 0 0 15.115 0z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg
+                      version="1"
+                      class="c-nav--footer__svgicon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M31.67 9.18s-.312-2.354-1.27-3.39c-1.218-1.358-2.58-1.366-3.206-1.443C22.717 4 16.002 4 16.002 4h-.015s-6.715 0-11.19.347c-.626.077-1.988.085-3.206 1.443C.635 6.826.32 9.18.32 9.18S0 11.94 0 14.7v2.59c0 2.762.32 5.522.32 5.522s.312 2.352 1.27 3.386c1.22 1.358 2.816 1.317 3.528 1.46 2.56.26 10.877.342 10.877.342s6.722-.012 11.2-.355c.624-.08 1.987-.088 3.204-1.446.956-1.036 1.27-3.388 1.27-3.388s.32-2.76.32-5.523V14.7c0-2.76-.32-5.522-.32-5.522z"
+                      ></path>
+                      <path fill="#FFF" d="M12 10v12l10-6"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg
+                      class="c-nav--footer__svgicon"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 16 16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.816 0C15.466 0 16 .512 16 1.152v13.696c0 .63-.533 1.152-1.184 1.152H1.184C.534 16 0 15.477 0 14.848V1.152C0 .512.533 0 1.184 0zM3.563 4.96a1.382 1.382 0 0 0 0-2.763c-.768 0-1.376.619-1.376 1.376 0 .768.608 1.387 1.376 1.387zm10.069 4.49c0-2.058-.437-3.637-2.848-3.637-1.152 0-1.92.63-2.24 1.227h-.032V5.995H6.24v7.637h2.368V9.856c0-.992.181-1.963 1.419-1.963 1.216 0 1.237 1.142 1.237 2.027v3.712h2.368zM2.368 13.633h2.379V5.995H2.368z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="clear">
+            <b
+              >©2023 Slack Technologies, LLC, a Salesforce company. All rights
+              reserved.</b
+            >
+            각 상표는 해당 소유자의 소유입니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
