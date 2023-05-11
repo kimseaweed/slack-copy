@@ -13,6 +13,7 @@
 /* #611f69; 보라*/
 /* #541554; 보라배경 */
 /* #1264a3; 파랑*/
+/* #f4ede4; 배경노랑 */
 .fontBold,
 .fontBold * {
   font-weight: bold;
@@ -44,6 +45,7 @@
 }
 .purple_btn:hover {
   background-color: #541554;
+  color: white;
 }
 .whiteLn_btn {
   border: 1px solid white;
@@ -126,7 +128,7 @@
   position: fixed !important;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 99;
   background: white;
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
   width: 100vw;
@@ -146,7 +148,7 @@
   fill: #000;
   color: #000000;
 }
-/* ******************* */
+/* ********************************* gnb 스타일 *************************************/
 #header {
   position: relative;
   height: 80px;
@@ -163,8 +165,10 @@
   fill: #000;
 }
 #gnb > ul > li > a,
+#gnb > ul > li > a > svg > path,
 #gnb > #sign > a:first-child {
   color: #000;
+  stroke:black !important;
 }
 #gnb > #header_logo {
   float: left;
@@ -271,7 +275,7 @@
   position: relative;
   top: -6px;
 }
-/* mob_gnb style */
+/* ********************************* mob_gnb style *************************************/
 #mob_gnb {
   height: 80px;
 }
@@ -364,7 +368,31 @@
 #mob_gnb > #concealNav div:last-child > .btn:first-child {
   margin-right: 1.49%;
 }
-/*---------------*/
+
+/* ********************************* 케로셀버튼 *************************************/
+#carousel_btn {
+  position: relative;
+  top: -50px;
+  text-align: center;
+}
+#carousel_btn > .dot {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+}
+#carousel_btn > .dot span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  border-radius: 9px;
+  background: #ccc;
+}
+#carousel_btn > .dot.active span {
+  background: #541554;
+}
+/* ********************************* footer *************************************/
 /* footerstyle > #experience + #fnb + #fnbLast  */
 #experience {
   background: #541554;
@@ -469,7 +497,48 @@
   color: #1264a3;
   fill: #1264a3;
 }
-/* ********** 반응형디자인 *************/
+/* ********************************* 솔루션, 엔터프라이즈 로고 *************************************/
+.logos{
+  position: relative;
+  cursor: pointer;
+}
+.logos>div{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: end;
+  gap:20px;
+  transition: all .3s;
+}
+.logos>.logos-btn{
+  padding: 1.2rem 2rem;
+  color: #1264a3;
+  background:#ffffff;
+  border-radius: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -15px;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  visibility: hidden;
+}
+.logos:hover .logos-btn{
+  visibility: visible;
+}
+.logos:hover div{
+  transform: scale(90%);
+  filter: blur(5px);
+  opacity: 0.3;
+}
+.logos img{
+  max-height: 30px;
+  margin-right: 2%;
+}
+
+/* ************************************************ 반응형디자인 *************************************/
 /* 1)데스크탑 */
 @media screen and (min-width: 1024px) {
   .desk-hide {

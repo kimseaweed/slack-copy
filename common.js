@@ -40,11 +40,26 @@
         $('.dot4').addClass('active');
         $('.dot:not(.dot4)').removeClass('active');
       })
-      if($(this).width() >=767 ){
+      if($(this).width() >= 767 ){
         $('.slide-container').css('transform','translateX(0vw)');
         $('.dot1').addClass('active');
         $('.dot:not(.dot1)').removeClass('active');
       };
+
+// *****************  anasection ************************
+
+      $(document).ready(function(){
+
+        $('.qna-section > ul > li > p').hide();
+        $('.qna-section > ul > li > div').hide();
+        $('.qna-section > ul > li > button').click(function(){
+            $(this).siblings('p').toggle();
+            $(this).siblings('div').toggle();
+            $(this).toggleClass('qna-rotate_down');
+        });
+    })
+
+// *****************  엔터프라이즈  ************************
 
     });
   })

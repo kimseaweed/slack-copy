@@ -1088,6 +1088,9 @@
     .sns {
       clear: both;
     }
+    #carousel_btn{
+      display: block;
+    }
     #footer #fnbLast > ul > li {
       float: none;
       margin-bottom: 30px;
