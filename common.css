@@ -176,7 +176,7 @@
   top: 27.5px;
 }
 #gnb > ul {
-  margin-left: 25px;
+  margin-left: 25px !important;
   width: 350px;
   height: 80px;
   display: inline-block;
