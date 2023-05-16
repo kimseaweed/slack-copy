@@ -216,44 +216,47 @@
                 모든 방법에 맞춤화된 리소스를 탐색해보세요.
               </p>
             </div>
-            <button class="btn purLn_btn purLn_btn_ac">
+            <button class="filter-btn btn purLn_btn purLn_btn_ac">
               콘텐츠 필터<span class="material-symbols-outlined">tune</span>
             </button>
           </div>
           <div>
-          <div class="slide-container">
-            <div class="slide-box">
-              <a href="#">
-                <img src="img/resources-nav-help-center@2x.jpg" alt="전구" />
-                <p>고객지원센터를 방문하세요</p>
-                <p>
-                  Slack에서 연결하고, 정리하고, 업무를 수행하는 방법을 상세한
-                  설명, 팁, 비디오를 통해 알아보세요.
-                </p>
-              </a>
-            </div>
-            <div class="slide-box">
-              <a href="#">
-                <img src="img/whats-new-920x920.it-IT@2x.jpg" alt="꽃 메가폰" />
-                <p>오프라인 이벤트 및 웨비나에 참여하세요</p>
-                <p>
-                  온라인 및 오프라인 행사에서 Slack에 대해 더 많이 배우고
-                  경험해보세요.
-                </p>
-              </a>
-            </div>
-            <div class="slide-box">
-              <a href="#">
-                <img src="img/app-directory@2x.jpg" alt="정리함" />
-                <p>앱 디렉토리를 살펴보세요</p>
-                <p>
-                  2,200개 이상의 상용 통합을 활용해 늘 사용하는 도구를 Slack으로
-                  가져오세요.
-                </p>
-              </a>
+            <div class="slide-container">
+              <div class="slide-box">
+                <a href="#">
+                  <img src="img/resources-nav-help-center@2x.jpg" alt="전구" />
+                  <p>고객지원센터를 방문하세요</p>
+                  <p>
+                    Slack에서 연결하고, 정리하고, 업무를 수행하는 방법을 상세한
+                    설명, 팁, 비디오를 통해 알아보세요.
+                  </p>
+                </a>
+              </div>
+              <div class="slide-box">
+                <a href="#">
+                  <img
+                    src="img/whats-new-920x920.it-IT@2x.jpg"
+                    alt="꽃 메가폰"
+                  />
+                  <p>오프라인 이벤트 및 웨비나에 참여하세요</p>
+                  <p>
+                    온라인 및 오프라인 행사에서 Slack에 대해 더 많이 배우고
+                    경험해보세요.
+                  </p>
+                </a>
+              </div>
+              <div class="slide-box">
+                <a href="#">
+                  <img src="img/app-directory@2x.jpg" alt="정리함" />
+                  <p>앱 디렉토리를 살펴보세요</p>
+                  <p>
+                    2,200개 이상의 상용 통합을 활용해 늘 사용하는 도구를
+                    Slack으로 가져오세요.
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
           <div id="carousel_btn" class="desk-hide lap-hide">
             <button class="dot dot1 active"><span></span></button>
             <button class="dot dot2"><span></span></button>
@@ -331,7 +334,7 @@
         <div class="res-section content-container pad-lr-4vw">
           <div class="content-title-container">
             <h2>모든 리소스 찾아보기</h2>
-            <button class="btn purLn_btn purLn_btn_ac">
+            <button class="filter-btn btn purLn_btn purLn_btn_ac">
               콘텐츠 필터<span class="material-symbols-outlined">tune</span>
             </button>
           </div>
@@ -529,6 +532,130 @@
                 >
               </li>
             </ul>
+          </div>
+        </div>
+        <div class="modal">
+          <div class="modal_content">
+            <div>
+              <h3>고객님만을 위한 콘텐츠 필터</h3>
+              <span class="material-symbols-outlined filter-close"> close </span>
+              <img src="img/img-all-kinds-of-teams@2x.png" class="desk-hide lap-hide" alt="">
+            </div>
+            <form class="modal-form" method="post">
+              <div>
+                <h6>다음 사용자를 위한 리소스 :</h6>
+                <div class="chekcontainer">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-high_edu"
+                    name="res-high_edu"
+                    value="high_edu"
+                  /><label for="res-high_edu">고등교육</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-enginnering"
+                    name="res-enginnering"
+                    value="enginnering"
+                  /><label for="res-enginnering">엔지니어링</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-financial"
+                    name="res-financial"
+                    value="financial"
+                  /><label for="res-financial">금융서비스</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-HR"
+                    name="res-HR"
+                    value="HR"/>
+                    <label for="res-HR">HR</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-comu"
+                    name="res-comu"
+                    value="comu"
+                  /><label for="res-comu">내부 커뮤니케이션</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-IT"
+                    name="res-IT"
+                    value="IT"
+                  /><label for="res-IT">IT</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-marketing"
+                    name="res-marketing"
+                    value="marketing"
+                  /><label for="res-marketing">마케팅</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-sales"
+                    name="res-sales"
+                    value="sales"
+                  /><label for="res-sales">영업</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-secu"
+                    name="res-secu"
+                    value="secu"
+                  /><label for="res-secu">보안</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-support"
+                    name="res-support"
+                    value="support"
+                  /><label for="res-support">지원</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="res-service"
+                    name="res-service"
+                    value="service"
+                  /><label for="res-service">서비스</label>
+                </div>
+                </div>
+                <h6>다음 사용자에게 맞춤 :</h6>
+                <div class="chekcontainer">
+                <div>
+                  <input type="checkbox" name="filter-admin" id="filter-admin" value="admin">
+                  <label for="filter-admin">관리자</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="filter-developer" id="filter-developer" value="developer">
+                  <label for="filter-developer">개발자</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="filter-normal" id="filter-normal" value="normal">
+                  <label for="filter-normal">일반 사용</label>
+                </div>
+                </div>
+              </div>
+              <div>
+                <input type="reset" class="modal-clear" value="지우기"></input>
+                <div href="#" class="purple_btn modal-submit">필터적용</div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

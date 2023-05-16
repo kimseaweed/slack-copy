@@ -39,5 +39,13 @@
             $(this).siblings('div').toggle();
             $(this).toggleClass('qna-rotate_down');
         });
-
+        
+        $('.filter-btn').click(function(){
+          $(".modal").show();
+          $("body").css("overflow","hidden");
+        })
+        $(".filter-close, .modal-submit").click(function(){
+          $(".modal").hide();
+          $("body").css("overflow","");
+        })
 });
