@@ -607,7 +607,17 @@
 .ent-section4 > .container > div:last-child > img {
   flex-basis: 0;
 }
-
+:target::before{
+    content: "";
+    height: 7vw;
+    display: block;
+    margin-top: -7vw;
+}
+#ent-section1::before,
+#ent-section3::before,
+#ent-section5::before{
+    background-color: white;
+}
 /* 1)데스크탑 */
 @media screen and (min-width: 1024px) {
   .ent-hero {
