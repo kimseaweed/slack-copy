@@ -1,54 +1,36 @@
   $(document).ready(function() {
-
-    $('#mob_gnb > #concealNav > ul > li:first-child ul').hide();
-    $('#mob_gnb > #concealNav > ul > li:first-child').click(function(){
-      $('#mob_gnb > #concealNav > ul > li:first-child > a').toggleClass("bg_gray")
-      $('#mob_gnb > #concealNav > ul > li:first-child > a').toggleClass("rotate_down")
-      $('#mob_gnb > #concealNav > ul > li:first-child ul').toggle();
+    var m_gnb_open = $('#mob_gnb > #concealNav > ul > li').eq(0)
+    $(m_gnb_open).children('ul').hide();
+    $(m_gnb_open).click(function(){
+      $(m_gnb_open).children('a').toggleClass("bg_gray").toggleClass("rotate_down")
+      $(m_gnb_open).children('ul').toggle();
     });
-
+    
     $(window).scroll(function(){
-      if($(this).scrollTop() >= 300) {
+      if($(this).scrollTop() >= 500) {
         $('#gnb').addClass('scroll-gnb');
-      }else{
-        $('#gnb').removeClass('scroll-gnb');
-      }
-
-      if($(this).scrollTop() >= 300) {
         $('#markNav').addClass('scroll-mob_gnb');
       }else{
-        $('#markNav').removeClass('scroll-mob_gnb');
+        $('.scroll-gnb, .scroll-mob_gnb').stop().animate({top: '-100px'}, 300, function() {
+          $('#gnb').css('top','').removeClass('scroll-gnb');
+          $('#markNav').css('top','').removeClass('scroll-mob_gnb');
+        });
       }
+    })
+    
+    $('.dot').click(function(){
+      var num = $(this).index();
+      var trx = 'translateX(-'+(num*100)+'vw)'
+      $('.slide-container').css('transform',trx)
+      $('.dot').removeClass('active').eq(num).addClass('active');
+    })
 
-      $('.dot1').click(function(){
-        $('.slide-container').css('transform','translateX(0vw)')
-        $('.dot1').addClass('active');
-        $('.dot:not(.dot1)').removeClass('active');
-      })
-      $('.dot2').click(function(){
-        $('.slide-container').css('transform','translateX(-100vw)')
-        $('.dot2').addClass('active');
-        $('.dot:not(.dot2)').removeClass('active');
-      })
-      $('.dot3').click(function(){
-        $('.slide-container').css('transform','translateX(-200vw)')
-        $('.dot3').addClass('active');
-        $('.dot:not(.dot3)').removeClass('active');
-      })
-      $('.dot4').click(function(){
-        $('.slide-container').css('transform','translateX(-300vw)')
-        $('.dot4').addClass('active');
-        $('.dot:not(.dot4)').removeClass('active');
-      })
-      if($(this).width() >= 767 ){
-        $('.slide-container').css('transform','translateX(0vw)');
-        $('.dot1').addClass('active');
-        $('.dot:not(.dot1)').removeClass('active');
-      };
-
-// *****************  anasection ************************
-
-      $(document).ready(function(){
+    $(window).on('resize', function(){
+    if($(window).width() >= 767){
+      $('.slide-container').css('transform','')
+      $('.dot').removeClass('active').eq(0).addClass('active');
+    };
+  });
 
         $('.qna-section > ul > li > p').hide();
         $('.qna-section > ul > li > div').hide();
@@ -57,9 +39,5 @@
             $(this).siblings('div').toggle();
             $(this).toggleClass('qna-rotate_down');
         });
-    })
 
-// *****************  엔터프라이즈  ************************
-
-    });
-  })
+});

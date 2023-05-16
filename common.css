@@ -94,7 +94,7 @@
 }
 .scroll-gnb {
   position: fixed !important;
-  top: 10px !important;
+  top: 10px;
   z-index: 9999;
   left: 50%;
   transform: translateX(-50%);
@@ -155,7 +155,6 @@
 }
 #gnb{
   position: absolute;
-  top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
@@ -596,6 +595,9 @@
   #footer #fnbLast .sns > ul > li {
     float: left;
   }
+  .logos>div{
+    flex-wrap: nowrap;
+}
 }
 /* 2)랩탑,태블릿 */
 @media screen and (max-width: 1023px) and (min-width: 768px) {
