@@ -992,6 +992,7 @@
     padding: 24px;
     display: flex;
     justify-content: space-between;
+    background: white;
 }
 .modal_content form> div:last-child .modal-clear{
     background-color: transparent;
