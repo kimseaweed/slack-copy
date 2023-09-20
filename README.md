@@ -1,5 +1,7 @@
 # Slack 클론 웹<br>
-업무 협업 툴 "Slack"을 클론입니다.<br><br>
+업무 협업 툴 "Slack"을 클론입니다.<br>
+https://slack.com/intl/ko-kr
+<br><br>
 HTML, CSS, 반응형 디자인을 연습하고,<br>
 JavaScript, jquery, Bootstrap를 체험해보기 위해 진행 했습니다.
 <br><br>
