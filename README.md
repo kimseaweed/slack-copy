@@ -1,7 +1,7 @@
 # Slack 클론 웹<br>
 업무 협업 툴 "Slack"을 클론입니다.<br><br>
-HTML, CSS의 기초를 다지고,<br>
-JavaScript, jquery, Bootstrap를 연습하기 위해 진행 했습니다.
+HTML, CSS, 반응형 디자인을 연습하고,<br>
+JavaScript, jquery, Bootstrap를 체험해보기 위해 진행 했습니다.
 <br><br>
 이 프로젝트를 통해 프론트엔드의 기본적인 지식을 축적할 수 있었습니다.
 <br><br>
